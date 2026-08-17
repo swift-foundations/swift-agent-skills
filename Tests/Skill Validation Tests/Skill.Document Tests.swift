@@ -181,7 +181,8 @@ extension Skill {
             @Test
             func `normalizes CRLF line endings`() throws {
                 let document = try Skill.Document(
-                    source: "---\r\nname: example-skill\r\ndescription: Example.\r\n---\r\n# Example\r\n"
+                    source:
+                        "---\r\nname: example-skill\r\ndescription: Example.\r\n---\r\n# Example\r\n"
                 )
 
                 #expect(document.body == "# Example\n")
@@ -195,7 +196,8 @@ extension Skill {
                         "name: example-skill",
                         "description: Example.",
                         "---",
-                    ] + Array(repeating: "# Detailed rule", count: 497)).joined(separator: "\n") + "\n"
+                    ] + Array(repeating: "# Detailed rule", count: 497)).joined(separator: "\n")
+                    + "\n"
 
                 #expect(
                     throws: Skill.Error.tooManyLines(actual: 501, maximum: 500)
