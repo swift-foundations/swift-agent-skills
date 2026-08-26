@@ -19,7 +19,7 @@ Every violation is a typed `Skill.Error` case with a human-readable description.
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/swift-foundations/swift-agent-skills.git", branch: "main")
+    .package(url: "https://github.com/swift-compositions/swift-agent-skills.git", branch: "main")
 ]
 ```
 
